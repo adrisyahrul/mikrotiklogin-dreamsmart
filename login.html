@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Dreamsmart hotspot > login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="-1" />
+<link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body class="pace-top bg-white pace-running">
+$(if chap-id)
+	<form name="sendin" action="$(link-login-only)" method="post">
+		<input type="hidden" name="username" />
+		<input type="hidden" name="password" />
+		<input type="hidden" name="dst" value="$(link-orig)" />
+		<input type="hidden" name="popup" value="true" />
+	</form>
+	
+	<script type="text/javascript" src="/md5.js"></script>
+	<script type="text/javascript">
+	<!--
+	    function doLogin() {
+		document.sendin.username.value = document.login.username.value;
+		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+		document.sendin.submit();
+		return false;
+	    }
+	//-->
+	</script>
+$(endif)
+	<!-- begin #page-container -->
+	<div id="page-container" class="fade in">
+	    <!-- begin login -->
+        <div class="login login-with-news-feed">
+            <!-- begin news-feed -->
+            <div class="news-feed">
+                <div class="news-image">
+                    <img src="assets/img/bg.jpg" data-id="login-cover-image" class="img-responsive" alt="">
+                </div>
+                <!-- <div class="news-caption">
+                    <h2 class="caption-title">HotSpot Wifi PT.Dreamsmart Sejahtera Makmur</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. 
+                    </p>
+                </div> -->
+            </div>
+            <!-- end news-feed -->
+            <!-- begin right-content -->
+            <div class="right-content">
+                <!-- begin login-header -->
+                <div class="login-header">
+                    <div class="brand">
+                        <div class="pull-left">
+                            <img src="assets/img/ds-logo.png" class="img-responsive ds-logo" width="80px">
+                        </div>
+                        <div class="pull-right">
+                            <img src="assets/img/ds-text.png" class="img-responsive ds-text" width="280px">
+                        </div>
+						<br>
+						<br>
+						<br>
+						
+                    </div>
+                </div>
+                <!-- end login-header -->
+                
+                <!-- begin login-content -->
+                <div class="login-content">
+                <div>
+                    <p>You are connected to PT.Dreamsmart Sejahtera Makmur Hotspot Wifi, Please log in to use the Internet service</p>
+                </div>
+                    <form name="login" action="$(link-login-only)" method="post"
+					    $(if chap-id) onSubmit="return doLogin()" $(endif)>
+						<input type="hidden" name="dst" value="$(link-orig)" />
+						<input type="hidden" name="popup" value="true" />
+
+                        <div class="form-group m-b-15">
+                            <input class="form-control text-center" name="username" type="text" value="$(username)"/>
+                        </div>
+                        <div class="form-group m-b-15">
+                            <input class="form-control text-center" name="password" type="password"/>
+                        </div>
+                        <div class="login-buttons">
+                            <input type="submit" class="btn btn-login" value="Log in" />
+                        </div>
+                        <div class="m-t-20 m-b-40 p-b-40 text-inverse">
+                        	$(if error)<br /><div style="color: #fd0000; font-size: 12px">$(error)</div>$(endif)
+                        </div>
+                        <div class="m-t-20 m-b-40 p-b-40 text-inverse">
+                            Does not have any ID? Contact Administrator to register
+                        </div>
+                        <hr>
+                        <p class="text-center">
+                            © 2017 Dreamsmart. All rights reserved 
+                        </p>
+                    </form>
+                </div>
+                <!-- end login-content -->
+            </div>
+            <!-- end right-container -->
+        </div>
+        <!-- end login -->
+	</div>
+	<!-- end page container -->
+
+
+<script type="text/javascript">
+<!--
+  document.login.username.focus();
+//-->
+</script>
+</body>
+</html>
